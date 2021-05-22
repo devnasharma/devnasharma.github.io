@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>everyoneneedsanIsha</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.mySlides {display:none;}
+*{
+margin: 0;
+padding: 0;
+}
+           body{
+             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+           	background-size: 400% 400%;
+           	animation: gradient 15s ease infinite;
+           }
+
+           @keyframes gradient {
+           	0% {
+           		background-position: 0% 50%;
+           	}
+           	50% {
+           		background-position: 100% 50%;
+           	}
+           	100% {
+           		background-position: 0% 50%;
+           	}
+           }
+
+
+.wrapper{
+width: 860px;
+margin: 0 auto;
+}
+.wrapper ul{
+list-style: none;
+margin-top: 2%;
+}
+.wrapper ul li {
+background: darkorchid;
+width: 170px;
+border: 1px solid #fff;
+height: 50px;
+line-height: 50px;
+text-align: center;
+float: left;
+color: white;
+font-size: 16px;
+position: relative;
+font-family: poppins;
+text-transform: uppercase;
+font-weight: bold;
+}
+.wrapper ul li:hover{
+background: mediumpurple;
+}
+
+.wrapper ul ul{
+display: none;
+}
+.wrapper ul li:hover > ul{
+display: block;
+}
+.wrapper ul ul ul{
+margin-left: 170px;
+top: 0;
+position: absolute;
+}
+#check:checked ~ ul{
+left: 0;
+}
+a {
+  text-decoration: none;
+}
+p.dashed {
+  border-style: dashed;
+border-color: blue;
+margin-top: 100px;
+margin-bottom: 100px;
+margin-right: 1000px;
+margin-left: 80px;
+}
+h2 {font-size: 40px}
+h3 {font-size: 30px}
+
+</style>
+</head>
+
+<body>
+  <header>
+    <nav class="wrapper">
+      <ul>
+  <li><a href="index.html" style="color:peachpuff">Home</a></li>
+  <li><a href="hbd.html" style="color:white">HBD</a></li>
+  <li>HAPPY PLACE
+              <ul>
+  <li><a href="me.html" style="color:white">ME</a></li>
+  <li><a href="crush.html" style="color:white"><3<3<3 </a></li>
+  <li><a href="sky.html" style="color:white">SKY</a></li>
+  <li><a href="siblings.html" style="color:white">SIBLINGS</a></li>
+  <li><a href="us.html" style="color:white">US MAYBE</a></li>
+  </ul>
+  </li>
+  <li><a href="chemistry.html" style="color:white">STUDY</a></li>
+  <li>R O M
+  <ul>
+    <li><a href="password.html"style="color:white">ACHIEVEMENTS!</a></li>
+    <li><a href="youu.html"style="color:white">IMPECCABLE ISHA</a></li>
+    <li><a href="tictactoe.html"style="color:white">TIC TAC TOE</a></li>
+  </ul>
+  </li>
+</nav>
+</header>
+<br/>
+<br/>
+<br/>
+<main>
+  <section>
+  <div class="w3-content w3-center" style="max-width:800px">
+  <img class="mySlides" src="j1.jpeg" style="width:100%">
+  <img class="mySlides" src="j2.jpeg" style="width:100%">
+  <img class="mySlides" src="j3.jpeg" style="width:100%">
+  <img class="mySlides" src="j4.jpeg" style="width:100%">
+  <img class="mySlides" src="j5.jpeg" style="width:100%">
+  <img class="mySlides" src="j6.jpeg" style="width:100%">
+  <img class="mySlides" src="j7.jpeg" style="width:100%">
+  <img class="mySlides" src="j8.jpeg" style="width:100%">
+  <img class="mySlides" src="j9.jpeg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000); // Change image every 1 seconds
+}
+</script>
+</section>
+</main>
+<footer>
+  <h2 style="color:palegreen; text-align: center "><b>HAPPY BIRTHDAY</b></h2>
+  <h3 style="color:paleturquoise; text-align: center"><b>SO FINALLY YOU TURNED 18 DUMMY!</b> </h3>
+</footer>
+</body>
+</html>
