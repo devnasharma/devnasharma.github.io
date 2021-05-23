@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  body {
+    background-image: url('h.jpeg');
+    background-size: 200px 300px;
+  }
+  *{
+  margin: 0;
+  padding: 0;
+  }
+    .wrapper{
+    width: 860px;
+    margin: 0 auto;
+    }
+    .wrapper ul{
+    list-style: none;
+    margin-top: 2%;
+    }
+    .wrapper ul li {
+    background: darkorchid;
+    width: 170px;
+    border: 1px solid #fff;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    font-family: poppins;
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+    .wrapper ul li:hover{
+    background: mediumpurple;
+    }
+
+    .wrapper ul ul{
+    display: none;
+    }
+    .wrapper ul li:hover > ul{
+    display: block;
+    }
+    .wrapper ul ul ul{
+    margin-left: 170px;
+    top: 0;
+    position: absolute;
+    }
+    #check:checked ~ ul{
+    left: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    .hello {
+      opacity: 1 !important;
+    }
+    .full {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .full .content {
+      background-color: rgba(0,0,0,0.75) !important;
+      height: 100%;
+      width: 100%;
+      display: grid;
+    }
+    .full .content img {
+      left: 50%;
+      transform: translate3d(0, 0, 0);
+      animation: zoomin 1s ease;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+    .byebye {
+      opacity: 0;
+    }
+    .byebye:hover {
+      transform: scale(0.2) !important;
+    }
+    .gallery {
+      display: grid;
+      grid-column-gap: 8px;
+      grid-row-gap: 8px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-auto-rows: 8px;
+    }
+    .gallery img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 16px #333;
+      transition: all 1.5s ease;
+    }
+    .gallery img:hover {
+      box-shadow: 0 0 32px #333;
+    }
+    .gallery .content {
+      padding: 4px;
+    }
+    .gallery .gallery-item {
+      transition: grid-row-start 300ms linear;
+      transition: transform 300ms ease;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+    .gallery .gallery-item:hover {
+      transform: scale(1.025);
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+      }
+    }
+    @media (max-width: 400px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      }
+    }
+    @-moz-keyframes zoomin {
+      0% {
+        max-width: 50%;
+        transform: rotate(-30deg);
+        filter: blur(4px);
+      }
+      30% {
+        filter: blur(4px);
+        transform: rotate(-80deg);
+      }
+      70% {
+        max-width: 50%;
+        transform: rotate(45deg);
+      }
+      100% {
+        max-width: 100%;
+        transform: rotate(0deg);
+      }
+    }
+    @-webkit-keyframes zoomin {
+      0% {
+        max-width: 50%;
+        transform: rotate(-30deg);
+        filter: blur(4px);
+      }
+      30% {
+        filter: blur(4px);
+        transform: rotate(-80deg);
+      }
+      70% {
+        max-width: 50%;
+        transform: rotate(45deg);
+      }
+      100% {
+        max-width: 100%;
+        transform: rotate(0deg);
+      }
+    }
+    @-o-keyframes zoomin {
+      0% {
+        max-width: 50%;
+        transform: rotate(-30deg);
+        filter: blur(4px);
+      }
+      30% {
+        filter: blur(4px);
+        transform: rotate(-80deg);
+      }
+      70% {
+        max-width: 50%;
+        transform: rotate(45deg);
+      }
+      100% {
+        max-width: 100%;
+        transform: rotate(0deg);
+      }
+    }
+    @keyframes zoomin {
+      0% {
+        max-width: 50%;
+        transform: rotate(-30deg);
+        filter: blur(4px);
+      }
+      30% {
+        filter: blur(4px);
+        transform: rotate(-80deg);
+      }
+      70% {
+        max-width: 50%;
+        transform: rotate(45deg);
+      }
+      100% {
+        max-width: 100%;
+        transform: rotate(0deg);
+      }
+    }
+    .gallery .preview
+    {
+    	border-color: #000;
+    	width: 200px;
+    	height: 150px;
+    }
+    #video-style{
+      border: 4px solid white;
+      padding :5px;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      background-color: inherit;
+    }
+    </style>
+    <head>
+      <body>
+        <header>
+          <nav class="wrapper">
+            <ul>
+        <li><a href="index.html" style="color:white">Home</a></li>
+        <li><a href="hbd.html" style="color:white">HBD</a></li>
+        <li style="color:peachpuff"> HAPPY PLACE
+                    <ul>
+        <li><a href="me.html" style="color:peachpuff">ME</a></li>
+        <li><a href="crush.html" style="color:white"><3<3<3</a></li>
+        <li><a href="sky.html" style="color:white">SKY</a></li>
+        <li><a href="siblings.html" style="color:white">SIBLINGS</a></li>
+        <li><a href="us.html" style="color:white">US MAYBE</a></li>
+        </ul>
+        </li>
+        <li><a href="chemistry.html" style="color:white">STUDY</a></li>
+        <li> R O M
+        <ul>
+          <li><a href="password.html"style="color:white">ACHIEVEMENTS!</a></li>
+          <li><a href="youu.html"style="color:white">IMPECCABLE ISHA</a></li>
+          <li><a href="tictactoe.html"style="color:white">TIC TAC TOE</a></li>
+        </ul>
+        </li>
+      </nav>
+      </header>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <main>
+        <h1 style="color:black; background:tomato"><b><i>ONCE UPON A TIME YOU CALLED ME YOUR HUMAN BACKUP AND I AM PROVING YOU RIGHT LIKE A PRO!</i></b></h1>
+<br/>
+        <div class="gallery" id="gallery">
+          <div class="gallery-item">
+              <div class="content"><img src="m (1).jpeg" alt=""></div>
+          </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (8).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (5).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (4).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (3).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (6).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (7).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (2).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (9).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (10).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (11).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (12).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (13).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (14).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (15).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (16).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (17).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (18).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (19).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (20).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (21).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (22).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (23).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (24).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (25).jpeg" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="m (26).jpeg" alt=""></div>
+            </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (27).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (28).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (29).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (30).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (31).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (32).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (33).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (34).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (35).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (36).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (37).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (38).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (39).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (40).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (41).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (42).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (43).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (44).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (45).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (46).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (47).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (48).jpeg" alt=""></div>
+              </div>
+              <div class="gallery-item">
+                  <div class="content"><img src="m (1).jpg" alt=""></div>
+              </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (8).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (5).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (4).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (3).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (6).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (7).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (2).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (9).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (10).jpg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (49).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (50).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (51).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (52).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (53).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (54).jpeg" alt=""></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="content"><img src="m (55).jpeg" alt=""></div>
+                </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (56).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (57).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (58).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (59).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (60).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (61).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (62).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (63).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (64).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (65).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (66).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (67).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (68).jpeg" alt=""></div>
+                  </div>
+                  <div class="gallery-item">
+                      <div class="content"><img src="m (69).jpeg" alt=""></div>
+                  </div>
+        </div>
+        <br/>
+        <h1 style="color:black; background:tomato"><b><i>WELL, YOU WERE LATE IN SENDING THE VIDEOS BUT HERE YOU GO.</i></b></h1>
+        <br/>
+        <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+          <source src="m1.mp4" type="video/mp4">
+          </video>
+      <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+            <source src="m (1).mp4" type="video/mp4">
+            </video>
+            <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+              <source src="m (2).mp4" type="video/mp4">
+              </video>
+              <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                <source src="m (3).mp4" type="video/mp4">
+                </video>
+                <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                  <source src="m (4).mp4" type="video/mp4">
+                  </video>
+                  <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                    <source src="m (5).mp4" type="video/mp4">
+                    </video>
+                    <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                      <source src="m (6).mp4" type="video/mp4">
+                      </video>
+                      <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                        <source src="m (7).mp4" type="video/mp4">
+                        </video>
+                          <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                            <source src="m (9).mp4" type="video/mp4">
+                            </video>
+                            <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                              <source src="m (10).mp4" type="video/mp4">
+                              </video>
+                              <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                <source src="m (11).mp4" type="video/mp4">
+                                </video>
+                                <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                  <source src="m (12).mp4" type="video/mp4">
+                                  </video>
+                                  <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                    <source src="m (13).mp4" type="video/mp4">
+                                    </video>
+                                    <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                      <source src="m (14).mp4" type="video/mp4">
+                                      </video>
+                                        <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                          <source src="m (16).mp4" type="video/mp4">
+                                          </video>
+                                          <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                            <source src="m (17).mp4" type="video/mp4">
+                                            </video>
+                                            <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                              <source src="m (18).mp4" type="video/mp4">
+                                              </video>
+                                              <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                <source src="m (19).mp4" type="video/mp4">
+                                                </video>
+                                                <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                  <source src="m (20).mp4" type="video/mp4">
+                                                  </video>
+                                                  <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                    <source src="m (21).mp4" type="video/mp4">
+                                                    </video>
+                                                    <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                      <source src="m (8).mp4" type="video/mp4">
+                                                      </video>
+                                                        <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                          <source src="m (22).mp4" type="video/mp4">
+                                                          </video>
+                                                          <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                            <source src="m (23).mp4" type="video/mp4">
+                                                            </video>
+                                                            <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                              <source src="m (24).mp4" type="video/mp4">
+                                                              </video>
+                                                              <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                                <source src="m (25).mp4" type="video/mp4">
+                                                                </video>
+                                                                <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                                  <source src="m (26).mp4" type="video/mp4">
+                                                                  </video>
+                                                                  <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                                    <source src="m (27).mp4" type="video/mp4">
+                                                                    </video>
+                                                                    <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                                      <source src="m (28).mp4" type="video/mp4">
+                                                                      </video>
+                                                                      <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                                        <source src="m (29).mp4" type="video/mp4">
+                                                                        </video>
+                                                                        <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                                          <source src="m (30).mp4" type="video/mp4">
+                                                                          </video>
+                                                                          <video class="video" id="video-style" width="200" controls poster="p (1).jpeg" loop>
+                                                                            <source src="m (31).mp4" type="video/mp4">
+                                                                            </video>
+                                                                            <video class="video" id="video-style" width="200" controls poster="p (2).jpeg" loop>
+                                                                              <source src="m (15).mp4" type="video/mp4">
+                                                                              </video>
+    <script>
+    var gallery = document.querySelector('#gallery');
+    var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+    var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+    var resizeAll = function () {
+        var altura = getVal(gallery, 'grid-auto-rows');
+        var gap = getVal(gallery, 'grid-row-gap');
+        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+            var el = item;
+            el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+        });
+    };
+    gallery.querySelectorAll('img').forEach(function (item) {
+        item.classList.add('byebye');
+        if (item.complete) {
+            console.log(item.src);
+        }
+        else {
+            item.addEventListener('load', function () {
+                var altura = getVal(gallery, 'grid-auto-rows');
+                var gap = getVal(gallery, 'grid-row-gap');
+                var gitem = item.parentElement.parentElement;
+                gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+                item.classList.remove('byebye');
+            });
+        }
+    });
+    window.addEventListener('resize', resizeAll);
+    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+            item.classList.toggle('full');
+        });
+    });
+
+    </script>
+        </main>
+        </body>
+        </html>
